@@ -15,7 +15,7 @@ need to be stored in a database. The following are the application specification
             Postal Code, Requested amount
             2. Owner: Social Security Number, Name, email, address, city, state,
              postal code
-            3. On the third page, display the loan decision based on therequested 
+            3. On the third page, display the loan decision based on the requested 
             amount calculated by the back end server.
         ii.Implement CSS styles from scratch, do not use any existing CSS library 
         like Bootstrap, Material Design or another similar one
