@@ -45,7 +45,7 @@ class MyInput extends Component {
         style={{
           textAlign: cursorRight ? 'right': 'left'
         }}
-        size={size || 20}
+        size={size || 19}
         placeholder={placeholder}
         type={type}
         list={type === 'select' ? name : undefined}
