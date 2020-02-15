@@ -1,6 +1,6 @@
 # Landing test
 
-App to technical assignment per interview lendingFront [live](http://test.lullaby.com)
+App to technical assignment of lendingFront [live](http://test.lullabylab.com)
 
 ![googlecloud][2]
 ## To run application
@@ -43,7 +43,9 @@ something low-level networking stuff, but not conventional web applications.
 ## Twisted vs Flask
 
 - Flask is a micro-framework and its help us to develop a app (like API-REST), he 
-comes with the essentials to make that, for a simple and agile development.
+comes with the essentials to make that, for a simple and agile development but no more.
+
+
 
 
 
