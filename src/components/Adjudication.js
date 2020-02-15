@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import MyInput from './MyInput'
+import MyInput from './myInput/MyInput'
 import { bindActionCreators } from 'redux'
 import { apply } from '../actions/adjudicationActions'
 import { connect } from 'react-redux'

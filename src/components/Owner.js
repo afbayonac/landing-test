@@ -5,7 +5,7 @@ import { bindActionCreators } from 'redux'
 import { updateOwnerAttribute } from '../actions/ownerActions'
 import PropTypes from 'prop-types'
 
-import MyInput from './MyInput'
+import MyInput from './myInput/MyInput'
 import stateCity from './USStatesCities'
 
 class Owner extends Component {
@@ -64,6 +64,12 @@ class Owner extends Component {
               error={socialSecurityNumber.error}
               label='Social Security Number'
               name='socialSecurityNumber'
+              onChange={(e) => {
+                e.target.value = e.target.value
+                  .replace(/^\D+/, '')
+                  .replace(/^(\d{3})(\d{0,2})$/, '$1-$2')
+                  .replace(/^(\d{3}-\d{2})(\d{0,3})$/, '$1-$2')
+              }}
               onAttributeUpdate={this.handleUpdateOwner}
             />
             <MyInput
@@ -95,6 +101,9 @@ class Owner extends Component {
               placeholder='12453-1234'
               value={postalCode.value}
               error={postalCode.error}
+              onChange={(e) => {
+                e.target.value = e.target.value.replace(/^(\d{5})(\d{0,4})$/g, '$1-$2')
+              }}
               label='Postal code'
               name='postalCode'
               onAttributeUpdate={this.handleUpdateOwner}

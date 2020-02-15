@@ -8,7 +8,7 @@ class MyInput extends Component {
     super(props)
     this.state = { value: this.props.value }
     this.handleOnBlur = this.handleOnBlur.bind(this)
-    this.handleOnchange = this.handleOnchange.bind(this)
+    this.handleOnChange = this.handleOnChange.bind(this)
   }
 
   static getDerivedStateFromProps (props, state) {
@@ -23,8 +23,9 @@ class MyInput extends Component {
     return null
   }
 
-  handleOnchange (e) {
+  handleOnChange (e) {
     e.preventDefault()
+    this.props.onChange && this.props.onChange(e)
     this.setState({ value: e.target.value })
   }
 
@@ -51,7 +52,7 @@ class MyInput extends Component {
         required
         onFocus={onFocus}
         name={name}
-        onChange={this.handleOnchange}
+        onChange={this.handleOnChange}
         onBlur={this.handleOnBlur}
         value={value}
       />
@@ -83,6 +84,7 @@ MyInput.propTypes = {
   placeholder: PropTypes.string,
   cursorRight: PropTypes.bool,
   onFocus: PropTypes.func,
+  onChange: PropTypes.func,
   size: PropTypes.number
 }
 

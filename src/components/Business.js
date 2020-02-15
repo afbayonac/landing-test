@@ -6,7 +6,7 @@ import { updateBusinessAttribute } from '../actions/businessActions'
 import PropTypes from 'prop-types'
 
 import stateCity from './USStatesCities'
-import MyInput from './MyInput'
+import MyInput from './myInput/MyInput'
 
 class Business extends Component {
   constructor (props) {
@@ -46,6 +46,9 @@ class Business extends Component {
               value={taxId.value}
               error={taxId.error}
               placeholder='12-1234567'
+              onChange={(e) => {
+                e.target.value = e.target.value.replace(/^(\d{2})(\d{0,7})$/g, '$1-$2')
+              }}
               label='Tax Identification'
               name='taxId'
               onAttributeUpdate={this.handleUpdateBusiness}
@@ -79,6 +82,9 @@ class Business extends Component {
               placeholder='12354-1234'
               value={postalCode.value}
               error={postalCode.error}
+              onChange={(e) => {
+                e.target.value = e.target.value.replace(/^(\d{5})(\d{0,4})$/g, '$1-$2')
+              }}
               label='Postal code'
               name='postalCode'
               onAttributeUpdate={this.handleUpdateBusiness}
