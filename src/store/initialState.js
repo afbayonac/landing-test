@@ -1,9 +1,11 @@
 import business from './initialStates/business'
 import owner from './initialStates/owner'
+import loan from './initialStates/loan'
 
 const initialState = {
   business,
-  owner
+  owner,
+  loan
 }
 
 export default initialState

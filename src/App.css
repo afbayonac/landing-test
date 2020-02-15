@@ -1,4 +1,79 @@
 body {
     background: aqua;
+    font-family: 'Barlow', sans-serif;
+    height: 100%;
+}
+
+h1 {
+    font-family: 'Staatliches', cursive;
+    font-size: 32px;
+    font-weight: lighter;
+    text-transform: uppercase;
+}
+
+.App {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loanButton {
+    color: black !important;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: #ffffff;
+    border: 2px solid #494949 !important;
+    display: inline-block;
+    transition: all 0.4s ease 0s;
+}
+
+.loanButton:hover {
+    color: lightyellow !important;
+    background: gold;
+    border: 2px solid black !important;
+    transition: all 0.4s ease 0s;
+    box-shadow: -2px 0 white, 0 2px 3px white, 2px 0 3px white, 0 -2px 3px white;
+}
+
+.next {
+    height: 100%;
+    width: 40px;
+}
+
+.next >  p {
+    font-family: 'Staatliches', cursive;
+    font-size: 28px;
+    margin: 0;
+    line-height: 24px;
+    writing-mode: vertical-rl;
+    text-transform: uppercase;
+    text-orientation: upright;
+}
+
+.container {
+    min-width: 250px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    border-color: black;
+}
+
+.container > .containerInputs {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+}
+
+.page {
+    position: absolute;
+    right: 30px;
+    top: 10px;
+}
+
+img {
+    max-width: 240px;
+    align-self: center;
 }
 

@@ -5,9 +5,10 @@ import Business from './components/Business'
 import Owner from './components/Owner'
 import Adjudication from './components/Adjudication'
 
-const App = () => {
+const App = (props) => {
+  const { pathname } = props.location
   return (
-    <div>
+    <div className='App'>
       <Switch>
         <Route exact path='/loan/business'>
           <Business />
@@ -20,12 +21,17 @@ const App = () => {
         </Route>
         <Route path='/'>
           <Link to='/loan/business'>
-            <button>
+            <button className='loanButton'>
               Apply for a loan
             </button>
           </Link>
         </Route>
       </Switch>
+      <h1 className='page'>
+        {pathname === '/loan/business' && '1/3'}
+        {pathname === '/loan/owner' && '2/3'}
+        {pathname === '/loan/adjudication' && '3/3'}
+      </h1>
     </div>
   )
 }

@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
+import './myInput.css'
+
 class MyInput extends Component {
   constructor (props) {
     super(props)
@@ -22,6 +24,7 @@ class MyInput extends Component {
   }
 
   handleOnchange (e) {
+    e.preventDefault()
     this.setState({ value: e.target.value })
   }
 
@@ -31,15 +34,39 @@ class MyInput extends Component {
 
   render () {
     const { value } = this.state
-    const { label } = this.state
+    const { label, error, type, list, placeholder, cursorRight, onFocus, name, size } = this.props
+
+    let input = type !== 'number' ? (
+      <input
+        onKeyPress={e => {
+          if (e.key === 'Enter') e.preventDefault()
+        }}
+        style={{
+          textAlign: cursorRight ? 'right': 'left'
+        }}
+        size={size || 20}
+        placeholder={placeholder}
+        type={type}
+        list={type === 'select' ? name : undefined}
+        required
+        onFocus={onFocus}
+        name={name}
+        onChange={this.handleOnchange}
+        onBlur={this.handleOnBlur}
+        value={value}
+      />
+    ) : type === 'number'
+
     return (
-      <div>
-        <label>{label}</label>
-        <input
-          onChange={this.handleOnchange}
-          onBlur={this.handleOnBlur}
-          value={value}
-        />
+      <div className={`myInput ${error && 'error'}`}>
+        <label htmlFor={this.props.name}>{label}</label>
+        {input}
+        {type === 'select' && list && (
+          <datalist id={this.props.name}>
+            {list && list.map(e => (<option key={e}> {e} </option>))}
+          </datalist>
+        )}
+        <span id='error'>{error}</span>
       </div>
     )
   }
@@ -48,8 +75,19 @@ class MyInput extends Component {
 MyInput.propTypes = {
   name: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
-  value: PropTypes.string,
-  onAttributeUpdate: PropTypes.func.isRequired
+  value: PropTypes.string.isRequired,
+  error: PropTypes.string.isRequired,
+  onAttributeUpdate: PropTypes.func.isRequired,
+  type: PropTypes.string,
+  list: PropTypes.arrayOf(PropTypes.string),
+  placeholder: PropTypes.string,
+  cursorRight: PropTypes.bool,
+  onFocus: PropTypes.func,
+  size: PropTypes.number
+}
+
+MyInput.defaultProps = {
+  type: 'text'
 }
 
 export default MyInput

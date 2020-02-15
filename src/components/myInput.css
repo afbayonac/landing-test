@@ -1,0 +1,32 @@
+.myInput > input {
+    display: block;
+    padding: 0.4em;
+    border: none;
+    border-radius: 5px;
+    margin-top: 2px;
+}
+
+.myInput > label {
+    margin-left: 5px;
+}
+
+.myInput > span {
+    display: block;
+    height: 10px;
+    font-size: 12px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    margin-left: 5px;
+    color: deeppink;
+    text-shadow: -2px 0  3px white, 0 2px 3px white, 2px 0 3px white, 0 -2px 3px white;
+}
+
+.error > input {
+    outline-style: auto;
+    outline-color: deeppink;
+}
+
+.error > label {
+    color: deeppink;
+    text-shadow: -2px 0  3px white, 0 2px 3px white, 2px 0 3px white, 0 -2px 3px white;
+}
