@@ -2,6 +2,7 @@
 
 App to technical assignment per interview lendingFront, [live](test.lullaby.com)
 
+![googlecloud][2]
 ## To run application
 
 Fist download the repo 
@@ -20,11 +21,12 @@ Fist download the repo
 
 ## DataBase
 
-For a data base to bank loan ,i would started by something like that:
+For a data base to bank loan i would started by something like that:
 
 ![database][1]
 
-[1]: http://
+[1]: https://raw.githubusercontent.com/afbayonac/landing-test/master/database.png
+[2]: https://raw.githubusercontent.com/afbayonac/landing-test/master/leanding-test.png
 
 ## Twisted vs Nodejs(ExpressJS)
 
