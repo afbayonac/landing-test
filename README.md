@@ -1,4 +1,4 @@
-# Landing test
+# Lending test
 
 App to technical assignment of lendingFront [live](http://test.lullabylab.com)
 
