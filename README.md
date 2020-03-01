@@ -27,7 +27,7 @@ For a data base to bank loan i would started by something like that:
 
 [1]: https://raw.githubusercontent.com/afbayonac/landing-test/master/database.png
 [2]: https://raw.githubusercontent.com/afbayonac/landing-test/master/leanding-test.png
-
+[3]: https://media.giphy.com/media/qiDb8McXyj6Eg/giphy.gif
 ## Twisted vs Nodejs
 
 * Nodejs and twisted are asynchronous this mean they are really great for handle I/O 
@@ -45,8 +45,13 @@ something low-level networking stuff, but not conventional web applications.
 - Flask is a micro-framework and its help us to develop a app (like API-REST), he 
 comes with the essentials to make that, for a simple and agile development but no more.
 
+## Author
 
+andres Bayona - @afbayonac
 
+# Result 
+
+![declined][3]
 
 
 
